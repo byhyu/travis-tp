@@ -22,7 +22,7 @@ This potentially leads to inefficient test execution:
 
 => Yes, in the interest of time. Also, the execution time analysis would make sense both for test prioritization and selection, instead of just selection.
 
-    About downloading the build logs you are referring to these logs[https://github.com/elbaum/CI-Datasets], right?
+    About downloading the build logs you are referring to these [logs](https://github.com/elbaum/CI-Datasets), right?
 
 => Yes, you would just need to crosslink each build with its corresponding Ruby/Gem information.
 
