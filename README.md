@@ -11,15 +11,15 @@ This potentially leads to inefficient test execution:
 
  
 ```
-    The idea is to first identify patterns of needless TS execution that lead to wasteful executions, such as:
-    (1) a TS fails for any Ruby version for a specific GEM configuration,
-    (2) a TS fails for any GEM configuration for a specific Ruby version,
-    (3) a tS fails for any GEM configuration for any Ruby version,
-    and (4) may be more.
-    
-    After identifying these cases, we may compare their execution and demonstrate the possible
-    savings by avoiding the needless execution of failing TS(s).
-    If I understand correctly, we are shifting our focus from energy consumption to execution time, right?
+The idea is to first identify patterns of needless TS execution that lead to wasteful executions, such as:
+(1) a TS fails for any Ruby version for a specific GEM configuration,
+(2) a TS fails for any GEM configuration for a specific Ruby version,
+(3) a tS fails for any GEM configuration for any Ruby version,
+and (4) may be more.
+
+After identifying these cases, we may compare their execution and demonstrate the possible
+savings by avoiding the needless execution of failing TS(s).
+If I understand correctly, we are shifting our focus from energy consumption to execution time, right?
 ```
     
 => Yes, in the interest of time. Also, the execution time analysis would make sense both for test prioritization and selection, instead of just selection.
