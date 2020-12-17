@@ -38,10 +38,17 @@ So, the goal of the project could be to address the following RQs:
 ## Datasets
 Ruby on Rails could be used to do the evaluation, but just would need to *check how explicit the test suite execution/success/failure data is in the build logs *(which you would need to download).
 
-    used the data from https://github.com/elbaum/CI-Datasets and added the config data (ruby version, GEM) crawled from api.travis-ci.org. 
+
+    used the data from https://github.com/elbaum/CI-Datasets and added the config data (ruby version, GEM) crawled from api.travis-ci.org. we retrieved a sample as large as 100000 test suites.
 
 ## Analysis
 #### RQ1: How common are the above cases of test execution redundancy?
+(1) a TS fails for any Ruby version for a specific GEM configuration 
+=> group by <test_suite, GEM>, if the build status are all failed, then mark it unnecessary, get 265/1516
+(2) a TS fails for any GEM configuration for a specific Ruby version
+=> group by <test_suite, version>, if the build status are all failed, then mark it unnecessary, get 2016/4194
+(3) a tS fails for any GEM configuration for any Ruby version,
+=> group by <test_suite>, if the build status are all failed, then mark it unnecessary, get 99/872
 
 #### RQ2: Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
 
