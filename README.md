@@ -33,4 +33,4 @@ So, the goal of the project could be to address the following RQs:
 3. Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
 
 ## Datasets
-Ruby on Rails could be used to do the evaluation, but just would need to check how explicit the test suite execution/success/failure data is in the build logs (which you would need to download).
+Ruby on Rails could be used to do the evaluation, but just would need to *check how explicit the test suite execution/success/failure data is in the build logs *(which you would need to download).
