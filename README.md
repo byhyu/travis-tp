@@ -43,11 +43,11 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 
 ## Analysis
 #### RQ1: How common are the above cases of test execution redundancy?
-(1) a TS fails for any Ruby version for a specific GEM configuration 
+ (1) a TS fails for any Ruby version for a specific GEM configuration 
 => group by <test_suite, GEM>, if the build status are all failed, then mark it unnecessary, get 265/1516
-(2) a TS fails for any GEM configuration for a specific Ruby version
+ (2) a TS fails for any GEM configuration for a specific Ruby version
 => group by <test_suite, version>, if the build status are all failed, then mark it unnecessary, get 2016/4194
-(3) a tS fails for any GEM configuration for any Ruby version,
+ (3) a tS fails for any GEM configuration for any Ruby version,
 => group by <test_suite>, if the build status are all failed, then mark it unnecessary, get 99/872
 
 #### RQ2: Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
