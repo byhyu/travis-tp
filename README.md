@@ -9,8 +9,7 @@ This potentially leads to inefficient test execution:
 - The same for if a given test suite fails for a specific GEM, across all Ruby versions.
 - Perhaps there are other patterns as well?
 
-
-     The idea is to first identify patterns of needless TS execution that lead to wasteful executions, such as:
+    The idea is to first identify patterns of needless TS execution that lead to wasteful executions, such as:
     (1) a TS fails for any Ruby version for a specific GEM configuration,
     (2) a TS fails for any GEM configuration for a specific Ruby version,
     (3) a tS fails for any GEM configuration for any Ruby version,
