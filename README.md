@@ -37,3 +37,16 @@ So, the goal of the project could be to address the following RQs:
 
 ## Datasets
 Ruby on Rails could be used to do the evaluation, but just would need to *check how explicit the test suite execution/success/failure data is in the build logs *(which you would need to download).
+
+    used the data from https://github.com/elbaum/CI-Datasets and added the config data (ruby version, GEM) crawled from api.travis-ci.org. 
+
+## RQ1: How common are the above cases of test execution redundancy?
+
+## RQ2: Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
+
+## RQ3: Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
+
+
+## Reference
+[1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).
+[2] 2018 using both Google datasets and rails, focused on commits prioritization.
