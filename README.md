@@ -9,6 +9,7 @@ This potentially leads to inefficient test execution:
 - The same for if a given test suite fails for a specific GEM, across all Ruby versions.
 - Perhaps there are other patterns as well?
 
+
  
 ```
 The idea is to first identify patterns of needless TS execution that lead to wasteful executions, such as:
