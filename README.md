@@ -58,5 +58,5 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 
 
 ## Reference
-[1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).
+[1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).   
 [2] 2018 using both Google datasets and rails, focused on commits prioritization.
