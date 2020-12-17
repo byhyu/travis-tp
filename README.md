@@ -16,7 +16,7 @@ This potentially leads to inefficient test execution:
     (3) a tS fails for any GEM configuration for any Ruby version,
     and (4) may be more.
     
-    After identifying these cases, we may compare their execution and demonstrate the possible
+>   After identifying these cases, we may compare their execution and demonstrate the possible
     savings by avoiding the needless execution of failing TS(s).
     If I understand correctly, we are shifting our focus from energy consumption to execution time, right?
 
