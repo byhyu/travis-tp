@@ -40,11 +40,12 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 
     used the data from https://github.com/elbaum/CI-Datasets and added the config data (ruby version, GEM) crawled from api.travis-ci.org. 
 
-## RQ1: How common are the above cases of test execution redundancy?
+## Analysis
+### RQ1: How common are the above cases of test execution redundancy?
 
-## RQ2: Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
+### RQ2: Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
 
-## RQ3: Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
+### RQ3: Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
 
 
 ## Reference
