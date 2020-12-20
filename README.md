@@ -60,3 +60,9 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 ## Reference
 [1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).   
 [2] 2018 using both Google datasets and rails, focused on commits prioritization.
+
+=======
+In the implementation of the additional method the following details were considered:
+1. Whenever there is a tie between multiple test cases with
+the same additional coverage, the test case with `less execution time` is chosen.
+

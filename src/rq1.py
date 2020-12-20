@@ -60,6 +60,5 @@ for x in group1:
     if (x[1]['build_status'] == 'failed').all():
         #print(x[0])
         count = count + 1
-
 print(count, ' / ', total)
 
