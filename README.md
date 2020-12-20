@@ -57,6 +57,16 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 #### RQ3: Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
 
 
+##  Contributing
+## Set up environment
+### Option 1: use `conda`
+From the root of the repository, create a Conda environment:
+ ```bash
+   conda env create --file environment.yml
+```
+### Option 2: use `venv` + `pip`
+TODO
+
 ## Reference
 [1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).   
 [2] 2018 using both Google datasets and rails, focused on commits prioritization.
@@ -65,4 +75,6 @@ Ruby on Rails could be used to do the evaluation, but just would need to *check 
 In the implementation of the additional method the following details were considered:
 1. Whenever there is a tie between multiple test cases with
 the same additional coverage, the test case with `less execution time` is chosen.
+
+
 

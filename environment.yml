@@ -1,0 +1,10 @@
+name: travis-project
+channels:
+  - defaults
+  - conda-forge
+
+dependencies:
+  - numpy
+  - pandas
+  - requests
+  - tqdm
