@@ -1,0 +1,5238 @@
+{
+  "@type": "build",
+  "@href": "/build/517573851",
+  "@representation": "standard",
+  "@permissions": {
+    "read": true,
+    "cancel": false,
+    "restart": false,
+    "prioritize": false
+  },
+  "id": 517573851,
+  "number": "60388",
+  "state": "passed",
+  "duration": 23931,
+  "event_type": "push",
+  "previous_state": "passed",
+  "pull_request_title": null,
+  "pull_request_number": null,
+  "started_at": "2019-04-09T02:01:34Z",
+  "finished_at": "2019-04-09T02:37:28Z",
+  "private": false,
+  "priority": false,
+  "repository": {
+    "@type": "repository",
+    "@href": "/repo/891",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "delete_key_pair": false,
+      "create_request": false,
+      "admin": false,
+      "activate": false,
+      "deactivate": false,
+      "migrate": false,
+      "star": false,
+      "create_cron": false,
+      "unstar": false,
+      "create_key_pair": false,
+      "create_env_var": false
+    },
+    "id": 891,
+    "name": "rails",
+    "slug": "rails/rails",
+    "description": "Ruby on Rails",
+    "github_id": 8514,
+    "vcs_id": "8514",
+    "vcs_type": "GithubRepository",
+    "github_language": null,
+    "active": true,
+    "private": false,
+    "owner": {
+      "@type": "organization",
+      "id": 23,
+      "login": "rails",
+      "@href": "/org/23"
+    },
+    "owner_name": "rails",
+    "vcs_name": "rails",
+    "default_branch": {
+      "@type": "branch",
+      "@href": "/repo/891/branch/master",
+      "@representation": "minimal",
+      "name": "master"
+    },
+    "starred": false,
+    "managed_by_installation": false,
+    "active_on_org": null,
+    "migration_status": null,
+    "history_migration_status": null,
+    "shared": false,
+    "config_validation": true
+  },
+  "branch": {
+    "@type": "branch",
+    "@href": "/repo/891/branch/master",
+    "@representation": "standard",
+    "name": "master",
+    "repository": {
+      "@type": "repository",
+      "@href": "/repo/891",
+      "@representation": "minimal",
+      "id": 891,
+      "name": "rails",
+      "slug": "rails/rails"
+    },
+    "default_branch": true,
+    "exists_on_github": true,
+    "last_build": {
+      "@href": "/build/517573851"
+    }
+  },
+  "tag": null,
+  "commit": {
+    "@type": "commit",
+    "@representation": "standard",
+    "id": 156103375,
+    "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+    "ref": "refs/heads/master",
+    "message": "s/Travis/Buildkite/",
+    "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+    "committed_at": "2019-04-09T01:58:49Z",
+    "committer": {
+      "name": "Matthew Draper",
+      "avatar_url": "https://0.gravatar.com/avatar/e55df1cc7d5fdb4ae9bc2afcb9afe7e4"
+    },
+    "author": {
+      "name": "Matthew Draper",
+      "avatar_url": "https://0.gravatar.com/avatar/e55df1cc7d5fdb4ae9bc2afcb9afe7e4"
+    }
+  },
+  "jobs": [
+    {
+      "@type": "job",
+      "@href": "/job/517573852",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573852,
+      "allow_failure": false,
+      "number": "60388.1",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:36Z",
+      "finished_at": "2019-04-09T02:37:28Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.296Z",
+      "updated_at": "2019-04-09T02:37:28.192Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=railties",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573853",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573853,
+      "allow_failure": false,
+      "number": "60388.2",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:34Z",
+      "finished_at": "2019-04-09T02:30:37Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.305Z",
+      "updated_at": "2019-04-09T02:30:37.281Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=railties",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573854",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573854,
+      "allow_failure": false,
+      "number": "60388.3",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:37Z",
+      "finished_at": "2019-04-09T02:08:51Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.339Z",
+      "updated_at": "2019-04-09T02:08:51.672Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionpack,actioncable",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573855",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573855,
+      "allow_failure": false,
+      "number": "60388.4",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:38Z",
+      "finished_at": "2019-04-09T02:13:10Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.373Z",
+      "updated_at": "2019-04-09T02:13:10.480Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionpack,actioncable",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573856",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573856,
+      "allow_failure": false,
+      "number": "60388.5",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:36Z",
+      "finished_at": "2019-04-09T02:11:45Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.381Z",
+      "updated_at": "2019-04-09T02:11:45.312Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionmailer,activemodel,activesupport,actionview,activejob,activestorage,actionmailbox,actiontext",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573857",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573857,
+      "allow_failure": false,
+      "number": "60388.6",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:41Z",
+      "finished_at": "2019-04-09T02:19:47Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.389Z",
+      "updated_at": "2019-04-09T02:19:47.744Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionmailer,activemodel,activesupport,actionview,activejob,activestorage,actionmailbox,actiontext",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573858",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573858,
+      "allow_failure": false,
+      "number": "60388.7",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:41Z",
+      "finished_at": "2019-04-09T02:10:47Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.397Z",
+      "updated_at": "2019-04-09T02:10:47.187Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activesupport PRESERVE_TIMEZONES=1",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573859",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573859,
+      "allow_failure": false,
+      "number": "60388.8",
+      "state": "passed",
+      "started_at": "2019-04-09T02:02:37Z",
+      "finished_at": "2019-04-09T02:15:08Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.405Z",
+      "updated_at": "2019-04-09T02:15:08.410Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activesupport PRESERVE_TIMEZONES=1",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573860",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573860,
+      "allow_failure": false,
+      "number": "60388.9",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:40Z",
+      "finished_at": "2019-04-09T02:07:08Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.415Z",
+      "updated_at": "2019-04-09T02:07:08.658Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:sqlite3",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573861",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573861,
+      "allow_failure": false,
+      "number": "60388.10",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:10:13Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.425Z",
+      "updated_at": "2019-04-09T02:10:13.185Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:sqlite3",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573862",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573862,
+      "allow_failure": false,
+      "number": "60388.11",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:11:58Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.432Z",
+      "updated_at": "2019-04-09T02:11:58.908Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:postgresql",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573863",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573863,
+      "allow_failure": false,
+      "number": "60388.12",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:16:12Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.438Z",
+      "updated_at": "2019-04-09T02:16:12.293Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:postgresql",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573864",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573864,
+      "allow_failure": false,
+      "number": "60388.13",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:42Z",
+      "finished_at": "2019-04-09T02:11:06Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.452Z",
+      "updated_at": "2019-04-09T02:11:06.173Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:mysql2",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573865",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573865,
+      "allow_failure": false,
+      "number": "60388.14",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:11:40Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.466Z",
+      "updated_at": "2019-04-09T02:11:40.816Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:mysql2",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573866",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573866,
+      "allow_failure": false,
+      "number": "60388.15",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:42Z",
+      "finished_at": "2019-04-09T02:08:13Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.474Z",
+      "updated_at": "2019-04-09T02:08:13.776Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=guides",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573867",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573867,
+      "allow_failure": false,
+      "number": "60388.16",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:42Z",
+      "finished_at": "2019-04-09T02:08:48Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.486Z",
+      "updated_at": "2019-04-09T02:08:48.722Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=guides",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573868",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573868,
+      "allow_failure": false,
+      "number": "60388.17",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:45Z",
+      "finished_at": "2019-04-09T02:08:45Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.501Z",
+      "updated_at": "2019-04-09T02:08:45.760Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionview:ujs",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573869",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573869,
+      "allow_failure": false,
+      "number": "60388.18",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:08:40Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.505Z",
+      "updated_at": "2019-04-09T02:08:40.803Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activejob:integration",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": "required",
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "packages": [
+              "rabbitmq-server"
+            ]
+          },
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "rabbitmq-server"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+          "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573870",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573870,
+      "allow_failure": false,
+      "number": "60388.19",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:44Z",
+      "finished_at": "2019-04-09T02:08:57Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.510Z",
+      "updated_at": "2019-04-09T02:08:57.942Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activejob:integration",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": "required",
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "packages": [
+              "rabbitmq-server"
+            ]
+          },
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "rabbitmq-server"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+          "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573871",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573871,
+      "allow_failure": false,
+      "number": "60388.20",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:08:29Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.516Z",
+      "updated_at": "2019-04-09T02:08:29.536Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:mysql2 MYSQL=mariadb",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "mariadb": 10.3
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "sudo mysql_upgrade",
+          "sudo service mysql restart"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573872",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573872,
+      "allow_failure": false,
+      "number": "60388.21",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:07:14Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.525Z",
+      "updated_at": "2019-04-09T02:07:14.928Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:sqlite3_mem",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573873",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573873,
+      "allow_failure": true,
+      "number": "60388.22",
+      "state": "failed",
+      "started_at": "2019-04-09T02:01:43Z",
+      "finished_at": "2019-04-09T02:31:39Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.530Z",
+      "updated_at": "2019-04-09T02:31:39.089Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=railties",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573874",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573874,
+      "allow_failure": true,
+      "number": "60388.23",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:45Z",
+      "finished_at": "2019-04-09T02:13:31Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.534Z",
+      "updated_at": "2019-04-09T02:13:31.528Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionpack,actioncable",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573875",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573875,
+      "allow_failure": true,
+      "number": "60388.24",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:45Z",
+      "finished_at": "2019-04-09T02:23:46Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.538Z",
+      "updated_at": "2019-04-09T02:23:46.235Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionmailer,activemodel,activesupport,actionview,activejob,activestorage,actionmailbox,actiontext",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573876",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573876,
+      "allow_failure": true,
+      "number": "60388.25",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:45Z",
+      "finished_at": "2019-04-09T02:10:07Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.544Z",
+      "updated_at": "2019-04-09T02:10:07.689Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activesupport PRESERVE_TIMEZONES=1",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573877",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573877,
+      "allow_failure": true,
+      "number": "60388.26",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:44Z",
+      "finished_at": "2019-04-09T02:09:50Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.564Z",
+      "updated_at": "2019-04-09T02:09:50.193Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:sqlite3",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573878",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573878,
+      "allow_failure": true,
+      "number": "60388.27",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:44Z",
+      "finished_at": "2019-04-09T02:12:20Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.572Z",
+      "updated_at": "2019-04-09T02:12:20.573Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:postgresql",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573879",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573879,
+      "allow_failure": true,
+      "number": "60388.28",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:51Z",
+      "finished_at": "2019-04-09T02:14:38Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.580Z",
+      "updated_at": "2019-04-09T02:14:38.600Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activerecord:mysql2",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573880",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573880,
+      "allow_failure": true,
+      "number": "60388.29",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:47Z",
+      "finished_at": "2019-04-09T02:11:29Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.587Z",
+      "updated_at": "2019-04-09T02:11:29.637Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=guides",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573881",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573881,
+      "allow_failure": true,
+      "number": "60388.30",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:48Z",
+      "finished_at": "2019-04-09T02:07:01Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.592Z",
+      "updated_at": "2019-04-09T02:07:01.151Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actioncable:integration",
+        "rvm": "2.5.3",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573882",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573882,
+      "allow_failure": true,
+      "number": "60388.31",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:53Z",
+      "finished_at": "2019-04-09T02:10:07Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.607Z",
+      "updated_at": "2019-04-09T02:10:07.154Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actioncable:integration",
+        "rvm": "2.6.0",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573883",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573883,
+      "allow_failure": true,
+      "number": "60388.32",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:48Z",
+      "finished_at": "2019-04-09T02:10:13Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.619Z",
+      "updated_at": "2019-04-09T02:10:13.954Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actioncable:integration",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573884",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573884,
+      "allow_failure": true,
+      "number": "60388.33",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:51Z",
+      "finished_at": "2019-04-09T02:10:01Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.626Z",
+      "updated_at": "2019-04-09T02:10:01.415Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=activejob:integration",
+        "rvm": "ruby-head",
+        "dist": "xenial",
+        "sudo": "required",
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "packages": [
+              "rabbitmq-server"
+            ]
+          },
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "rabbitmq-server"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+          "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573885",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573885,
+      "allow_failure": true,
+      "number": "60388.34",
+      "state": "failed",
+      "started_at": "2019-04-09T02:01:49Z",
+      "finished_at": "2019-04-09T02:09:18Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.642Z",
+      "updated_at": "2019-04-09T02:09:18.427Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionpack",
+        "jdk": "oraclejdk11",
+        "rvm": "jruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    },
+    {
+      "@type": "job",
+      "@href": "/job/517573886",
+      "@representation": "standard",
+      "@permissions": {
+        "read": true,
+        "cancel": false,
+        "restart": false,
+        "prioritize": false,
+        "debug": false,
+        "delete_log": false
+      },
+      "id": 517573886,
+      "allow_failure": true,
+      "number": "60388.35",
+      "state": "passed",
+      "started_at": "2019-04-09T02:01:52Z",
+      "finished_at": "2019-04-09T02:11:16Z",
+      "build": {
+        "@href": "/build/517573851"
+      },
+      "queue": "builds.gce",
+      "repository": {
+        "@type": "repository",
+        "@href": "/repo/891",
+        "@representation": "minimal",
+        "id": 891,
+        "name": "rails",
+        "slug": "rails/rails"
+      },
+      "commit": {
+        "@type": "commit",
+        "@representation": "minimal",
+        "id": 156103375,
+        "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+        "ref": "refs/heads/master",
+        "message": "s/Travis/Buildkite/",
+        "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+        "committed_at": "2019-04-09T01:58:49Z"
+      },
+      "owner": {
+        "@type": "organization",
+        "@href": "/org/23",
+        "@representation": "minimal",
+        "id": 23,
+        "login": "rails",
+        "vcs_type": "GithubOrganization"
+      },
+      "stage": null,
+      "created_at": "2019-04-09T02:01:14.653Z",
+      "updated_at": "2019-04-09T02:11:16.256Z",
+      "private": false,
+      "config": {
+        "os": "linux",
+        "env": "GEM=actionmailer,activemodel,activejob",
+        "jdk": "oraclejdk11",
+        "rvm": "jruby-head",
+        "dist": "xenial",
+        "sudo": false,
+        "cache": {
+          "directories": [
+            "vendor/bundle",
+            "/tmp/cache/unicode_conformance",
+            "/tmp/beanstalkd-1.10",
+            "node_modules",
+            "$HOME/.nvm"
+          ]
+        },
+        "group": "stable",
+        "addons": {
+          "apt": {
+            "sources": [
+              {
+                "sourceline": "ppa:jonathonf/ffmpeg-3"
+              },
+              {
+                "sourceline": "ppa:ubuntuhandbook1/apps"
+              }
+            ],
+            "packages": [
+              "ffmpeg",
+              "mupdf",
+              "mupdf-tools",
+              "poppler-utils"
+            ]
+          },
+          "chrome": "stable",
+          "postgresql": 10
+        },
+        "script": "ci/travis.rb",
+        ".result": "configured",
+        "language": "ruby",
+        "services": [
+          "memcached",
+          "redis-server",
+          "mysql"
+        ],
+        "global_env": "JRUBY_OPTS='--dev -J-Xmx1024M'",
+        "bundler_args": "--jobs 3 --retry 3",
+        "before_script": [
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+          "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+          "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+          "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+        ],
+        "notifications": {
+          "irc": {
+            "channels": [
+              {
+                "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          },
+          "email": false,
+          "campfire": {
+            "rooms": [
+              {
+                "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+              }
+            ],
+            "on_failure": "always",
+            "on_success": "change"
+          }
+        },
+        "before_install": [
+          "rm ${BUNDLE_GEMFILE}.lock",
+          "travis_retry gem update --system",
+          "travis_retry gem install bundler",
+          "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+          "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+          "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+          "[[ $GEM != 'actionview:ujs' ]] || node --version",
+          "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+          "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+          "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+          "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+        ]
+      }
+    }
+  ],
+  "stages": [
+
+  ],
+  "created_by": {
+    "@type": "user",
+    "@href": "/user/79498",
+    "@representation": "standard",
+    "@permissions": {
+      "read": true,
+      "sync": false
+    },
+    "id": 79498,
+    "login": "matthewd",
+    "name": "Matthew Draper",
+    "github_id": 1034,
+    "vcs_id": "1034",
+    "vcs_type": "GithubUser",
+    "avatar_url": "https://avatars1.githubusercontent.com/u/1034?v=4",
+    "education": false,
+    "allow_migration": false,
+    "email": null,
+    "is_syncing": false,
+    "synced_at": "2020-03-27T18:16:37Z",
+    "recently_signed_up": false,
+    "secure_user_hash": null
+  },
+  "updated_at": "2019-04-10T06:40:35.998Z",
+  "request": {
+    "@type": "request",
+    "@href": "/repo/891/request/158727514",
+    "@representation": "standard",
+    "id": 158727514,
+    "state": "finished",
+    "result": "approved",
+    "message": null,
+    "pull_request_mergeable": null,
+    "repository": {
+      "@type": "repository",
+      "@href": "/repo/891",
+      "@representation": "minimal",
+      "id": 891,
+      "name": "rails",
+      "slug": "rails/rails"
+    },
+    "branch_name": "master",
+    "commit": {
+      "@type": "commit",
+      "@representation": "minimal",
+      "id": 156103375,
+      "sha": "e485c14a3ee29ee486324a96545abf964d428101",
+      "ref": "refs/heads/master",
+      "message": "s/Travis/Buildkite/",
+      "compare_url": "https://github.com/rails/rails/compare/95fee9438bfb...e485c14a3ee2",
+      "committed_at": "2019-04-09T01:58:49Z"
+    },
+    "builds": [
+      {
+        "@href": "/build/517573851"
+      }
+    ],
+    "owner": {
+      "@type": "organization",
+      "@href": "/org/23",
+      "@representation": "minimal",
+      "id": 23,
+      "login": "rails",
+      "vcs_type": "GithubOrganization"
+    },
+    "created_at": "2019-04-09T02:01:13Z",
+    "event_type": "push",
+    "base_commit": null,
+    "head_commit": null,
+    "messages": [
+
+    ],
+    "config": {
+      "env": {
+        "global": [
+          "JRUBY_OPTS='--dev -J-Xmx1024M'"
+        ],
+        "matrix": [
+          "GEM=railties",
+          "GEM=actionpack,actioncable",
+          "GEM=actionmailer,activemodel,activesupport,actionview,activejob,activestorage,actionmailbox,actiontext",
+          "GEM=activesupport PRESERVE_TIMEZONES=1",
+          "GEM=activerecord:sqlite3",
+          "GEM=activerecord:postgresql",
+          "GEM=activerecord:mysql2",
+          "GEM=guides",
+          "GEM=actioncable:integration"
+        ]
+      },
+      "rvm": [
+        "2.5.3",
+        "2.6.0",
+        "ruby-head"
+      ],
+      "dist": "xenial",
+      "sudo": false,
+      "cache": {
+        "directories": [
+          "vendor/bundle",
+          "/tmp/cache/unicode_conformance",
+          "/tmp/beanstalkd-1.10",
+          "node_modules",
+          "$HOME/.nvm"
+        ]
+      },
+      "addons": {
+        "apt": {
+          "sources": [
+            {
+              "sourceline": "ppa:jonathonf/ffmpeg-3"
+            },
+            {
+              "sourceline": "ppa:ubuntuhandbook1/apps"
+            }
+          ],
+          "packages": [
+            "ffmpeg",
+            "mupdf",
+            "mupdf-tools",
+            "poppler-utils"
+          ]
+        },
+        "chrome": "stable",
+        "postgresql": 10
+      },
+      "matrix": {
+        "include": [
+          {
+            "env": "GEM=actionview:ujs",
+            "rvm": "2.5.3"
+          },
+          {
+            "env": "GEM=activejob:integration",
+            "rvm": "2.5.3",
+            "sudo": "required",
+            "addons": {
+              "apt": {
+                "packages": [
+                  "rabbitmq-server"
+                ]
+              },
+              "postgresql": 10
+            },
+            "services": [
+              "memcached",
+              "redis-server",
+              "rabbitmq-server"
+            ],
+            "before_install": [
+              "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+              "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+            ]
+          },
+          {
+            "env": "GEM=activejob:integration",
+            "rvm": "2.6.0",
+            "sudo": "required",
+            "addons": {
+              "apt": {
+                "packages": [
+                  "rabbitmq-server"
+                ]
+              },
+              "postgresql": 10
+            },
+            "services": [
+              "memcached",
+              "redis-server",
+              "rabbitmq-server"
+            ],
+            "before_install": [
+              "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+              "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+            ]
+          },
+          {
+            "env": "GEM=activejob:integration",
+            "rvm": "ruby-head",
+            "sudo": "required",
+            "addons": {
+              "apt": {
+                "packages": [
+                  "rabbitmq-server"
+                ]
+              },
+              "postgresql": 10
+            },
+            "services": [
+              "memcached",
+              "redis-server",
+              "rabbitmq-server"
+            ],
+            "before_install": [
+              "rm ${BUNDLE_GEMFILE}.lock",
+              "travis_retry gem update --system",
+              "travis_retry gem install bundler",
+              "[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)",
+              "pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd"
+            ]
+          },
+          {
+            "env": [
+              "GEM=activerecord:mysql2 MYSQL=mariadb"
+            ],
+            "rvm": "2.5.3",
+            "addons": {
+              "mariadb": 10.3
+            },
+            "before_install": [
+              "sudo mysql_upgrade",
+              "sudo service mysql restart"
+            ]
+          },
+          {
+            "env": [
+              "GEM=activerecord:sqlite3_mem"
+            ],
+            "rvm": "2.5.3"
+          },
+          {
+            "env": [
+              "GEM=actionpack"
+            ],
+            "jdk": "oraclejdk11",
+            "rvm": "jruby-head"
+          },
+          {
+            "env": [
+              "GEM=actionmailer,activemodel,activejob"
+            ],
+            "jdk": "oraclejdk11",
+            "rvm": "jruby-head"
+          }
+        ],
+        "fast_finish": true,
+        "allow_failures": [
+          {
+            "rvm": "ruby-head"
+          },
+          {
+            "rvm": "jruby-head"
+          },
+          {
+            "env": "GEM=actioncable:integration"
+          }
+        ]
+      },
+      "script": "ci/travis.rb",
+      "language": "ruby",
+      "services": [
+        "memcached",
+        "redis-server",
+        "mysql"
+      ],
+      "bundler_args": "--jobs 3 --retry 3",
+      "before_script": [
+        "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")",
+        "$(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")",
+        "[[ $GEM != 'railties' ]] || (cd actionview && yarn build)",
+        "[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)"
+      ],
+      "notifications": {
+        "irc": {
+          "channels": [
+            {
+              "secure": "QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ="
+            }
+          ],
+          "on_failure": "always",
+          "on_success": "change"
+        },
+        "email": false,
+        "campfire": {
+          "rooms": [
+            {
+              "secure": "YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI="
+            }
+          ],
+          "on_failure": "always",
+          "on_success": "change"
+        }
+      },
+      "before_install": [
+        "rm ${BUNDLE_GEMFILE}.lock",
+        "travis_retry gem update --system",
+        "travis_retry gem install bundler",
+        "[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d",
+        "[[ $GEM != 'actioncable:integration' ]] || yarn install",
+        "[[ $GEM != 'actionview:ujs' ]] || nvm install node",
+        "[[ $GEM != 'actionview:ujs' ]] || node --version",
+        "[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)",
+        "[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)",
+        "[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH",
+        "[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs"
+      ]
+    },
+    "raw_configs": [
+      {
+        "@type": "request_raw_configuration",
+        "@representation": "minimal",
+        "config": "dist: xenial\nlanguage: ruby\nsudo: false\n\ncache:\n  directories:\n    - vendor/bundle\n    - /tmp/cache/unicode_conformance\n    - /tmp/beanstalkd-1.10\n    - node_modules\n    - $HOME/.nvm\n\nservices:\n  - memcached\n  - redis-server\n  - mysql\n\naddons:\n  postgresql: 10\n  chrome: stable\n  apt:\n    sources:\n      - sourceline: \"ppa:jonathonf/ffmpeg-3\"\n      - sourceline: \"ppa:ubuntuhandbook1/apps\"\n    packages:\n      - ffmpeg\n      - mupdf\n      - mupdf-tools\n      - poppler-utils\n\nbundler_args: --jobs 3 --retry 3\nbefore_install:\n  - \"rm ${BUNDLE_GEMFILE}.lock\"\n  - \"travis_retry gem update --system\"\n  - \"travis_retry gem install bundler\"\n  - \"[[ -z $encrypted_0fb9444d0374_key && -z $encrypted_0fb9444d0374_iv ]] || openssl aes-256-cbc -K $encrypted_0fb9444d0374_key -iv $encrypted_0fb9444d0374_iv -in activestorage/test/service/configurations.yml.enc -out activestorage/test/service/configurations.yml -d\"\n  - \"[[ $GEM != 'actioncable:integration' ]] || yarn install\"\n  - \"[[ $GEM != 'actionview:ujs' ]] || nvm install node\"\n  - \"[[ $GEM != 'actionview:ujs' ]] || node --version\"\n  - \"[[ $GEM != 'actionview:ujs' ]] || (cd actionview && npm install)\"\n  - \"[[ $GEM != 'railties' ]] || (curl -o- -L https://yarnpkg.com/install.sh | bash)\"\n  - \"[[ $GEM != 'railties' ]] || export PATH=$HOME/.yarn/bin:$PATH\"\n  - \"[[ $GEM != 'activerecord:postgresql' ]] || sudo mount -o remount,size=50% /var/ramfs\"\n\nbefore_script:\n  # Set Sauce Labs username and access key. Obfuscated, purposefully not encrypted.\n  # Decodes to e.g. `export VARIABLE=VALUE`\n  - $(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX0FDQ0VTU19LRVk9YTAzNTM0M2YtZTkyMi00MGIzLWFhM2MtMDZiM2VhNjM1YzQ4\")\n  - $(base64 --decode <<< \"ZXhwb3J0IFNBVUNFX1VTRVJOQU1FPXJ1YnlvbnJhaWxz\")\n  - \"[[ $GEM != 'railties' ]] || (cd actionview && yarn build)\"\n  - \"[[ $GEM != 'railties' ]] || (cd railties/test/isolation/assets && yarn install)\"\n\nscript: 'ci/travis.rb'\n\nenv:\n  global:\n    - \"JRUBY_OPTS='--dev -J-Xmx1024M'\"\n  matrix:\n    - \"GEM=railties\"\n    - \"GEM=actionpack,actioncable\"\n    - \"GEM=actionmailer,activemodel,activesupport,actionview,activejob,activestorage,actionmailbox,actiontext\"\n    - \"GEM=activesupport PRESERVE_TIMEZONES=1\"\n    - \"GEM=activerecord:sqlite3\"\n    - \"GEM=activerecord:postgresql\"\n    - \"GEM=activerecord:mysql2\"\n    - \"GEM=guides\"\n    - \"GEM=actioncable:integration\"\n\nrvm:\n  - 2.5.3\n  - 2.6.0\n  - ruby-head\n\nmatrix:\n  include:\n    - rvm: 2.5.3\n      env: \"GEM=actionview:ujs\"\n    - rvm: 2.5.3\n      sudo: required\n      env: \"GEM=activejob:integration\"\n      addons:\n        postgresql: 10\n        apt:\n          packages:\n          - rabbitmq-server\n      services:\n        - memcached\n        - redis-server\n        - rabbitmq-server\n      before_install:\n        - \"[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)\"\n        - \"pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd\"\n    - rvm: 2.6.0\n      sudo: required\n      env: \"GEM=activejob:integration\"\n      addons:\n        postgresql: 10\n        apt:\n          packages:\n          - rabbitmq-server\n      services:\n        - memcached\n        - redis-server\n        - rabbitmq-server\n      before_install:\n        - \"[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)\"\n        - \"pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd\"\n    - rvm: ruby-head\n      sudo: required\n      env: \"GEM=activejob:integration\"\n      addons:\n        postgresql: 10\n        apt:\n          packages:\n          - rabbitmq-server\n      services:\n        - memcached\n        - redis-server\n        - rabbitmq-server\n      before_install:\n        - \"rm ${BUNDLE_GEMFILE}.lock\"\n        - \"travis_retry gem update --system\"\n        - \"travis_retry gem install bundler\"\n        - \"[ -f /tmp/beanstalkd-1.10/Makefile ] || (curl -L https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz | tar xz -C /tmp)\"\n        - \"pushd /tmp/beanstalkd-1.10 && make && (./beanstalkd &); popd\"\n    - rvm: 2.5.3\n      env:\n        - \"GEM=activerecord:mysql2 MYSQL=mariadb\"\n      before_install:\n        - \"sudo mysql_upgrade\"\n        - \"sudo service mysql restart\"\n      addons:\n        mariadb: 10.3\n    - rvm: 2.5.3\n      env:\n        - \"GEM=activerecord:sqlite3_mem\"\n    - rvm: jruby-head\n      jdk: oraclejdk11\n      env:\n        - \"GEM=actionpack\"\n    - rvm: jruby-head\n      jdk: oraclejdk11\n      env:\n        - \"GEM=actionmailer,activemodel,activejob\"\n  allow_failures:\n    - rvm: ruby-head\n    - rvm: jruby-head\n    - env: \"GEM=actioncable:integration\"\n  fast_finish: true\n\nnotifications:\n  email: false\n  irc:\n    on_success: change\n    on_failure: always\n    channels:\n      # \"irc.freenode.org#rails-contrib\"\n      - secure: \"QFKSOK7xQiWWqTzYfYm0XWoW7idzuxT57MBW9i9EASyRLEPuDwZEubKRP40Y7wPx7ylQd9lp6kJheeLnrDvvTjFbW3sWv9GDRl4WlOU8sG/Kv7MXAASXlDqzyJxxXTtzLeXz2iwY296kOBuKxKxl923eTvEGeocwH02QGo14LpQ=\"\n  campfire:\n    on_success: change\n    on_failure: always\n    rooms:\n      - secure: \"YA1alef1ESHWGFNVwvmVGCkMe4cUy4j+UcNvMUESraceiAfVyRMAovlQBGs6\\n9kBRm7DHYBUXYC2ABQoJbQRLDr/1B5JPf/M8+Qd7BKu8tcDC03U01SMHFLpO\\naOs/HLXcDxtnnpL07tGVsm0zhMc5N8tq4/L3SHxK7Vi+TacwQzI=\"\n",
+        "source": "rails/rails/.travis.yml@e485c14a3ee29ee4",
+        "merge_mode": null
+      }
+    ]
+  }
+}
