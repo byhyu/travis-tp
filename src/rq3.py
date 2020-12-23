@@ -30,11 +30,10 @@ def is_prioritized(test_timestamp:datetime,
         return True
     return False
 
-def run_window_based_test_prioritization(test_suite_inds:List, 
-                                         dataset:pd.DataFrame, 
+def run_window_based_test_prioritization(wp_dataset:pd.DataFrame, 
+                                         all_tests_history: pd.DataFrame,
                                          We:Union[int, float], 
-                                         Wf:Union[int, float],
-                                         Wp:Union[int, float]):
+                                         Wf:Union[int, float]):
     """
     Args:
         test_suite_inds: index of test cases, for example [0,1,2,3,4,5,6]
@@ -44,8 +43,8 @@ def run_window_based_test_prioritization(test_suite_inds:List,
         Wp: Prioritizaion window in hours, refer to 2014 paper for details
     Returns:
     """
-
-    dataset.sort_values('test_suite_start time', inplace=True)
+    
+    #wp_dataset.sort_values('job_start_time', inplace=True)
     existing_tests = set()
     accumulated_runtime = 0
     all_tests_history = pd.DataFrame([])
@@ -53,28 +52,27 @@ def run_window_based_test_prioritization(test_suite_inds:List,
     prioritized_tests = pd.DataFrame([])
     non_prioritized_tests = pd.DataFrame([])
     
-    for test_ind in tqdm(test_suite_inds):
-        test_row = dataset.iloc[test_ind, :]
-        test_name = test_row.test_suite
-        # print(f'test name:{test_name}')
+    for index, row in tqdm(wp_dataset.iterrows()):
+        test_name = row['test_suite']
 
-        test_time_str = dataset.iloc[test_ind, :]['job_start_time']
-        test_timestamp = datetime.strptime(test_time_str, '%Y-%m-%d %H:%M:%S.%f')
+        test_timestamp = row['job_start_time']
 
         if test_name in existing_tests:
             is_new = False
+            # 第一次执行时判断all_tests_history空
+            if len(all_tests_history) == 0:
+                break
             test_history = all_tests_history[all_tests_history['test_suite'] == test_name]
-            is_test_prioritized = is_prioritized(test_timestamp, test_history, We, Wf, Wp)
+            is_test_prioritized = is_prioritized(test_timestamp, test_history, We, Wf, is_new)
         else:
             is_test_prioritized = True
             existing_tests.add(test_name)
         
         if is_test_prioritized:
-            build_status = test_row.build_status
-            exec_time = test_row.test_suite_duration
+            build_status = row['build_status']
+            exec_time = row['test_suite_duration']
             test_df = pd.DataFrame(index=[test_timestamp],
-                                   data={'test_suite': [test_name], 'build_status': [build_status],
-                                         'exec_time': exec_time})
+                                   data={'test_suite': [test_name], 'build_status': [build_status],'exec_time': exec_time})
             test_df.sort_index(inplace=True)
 
             prioritized_tests = prioritized_tests.append(test_df)
@@ -85,33 +83,38 @@ def run_window_based_test_prioritization(test_suite_inds:List,
     return pd.concat([all_tests_history, non_prioritized_tests], keys=['x','y'])
 
 
-def split_dataset_into_wp(test_suite_inds:List, 
-                          df:pd.DataFrame,
+def split_dataset_into_wp(df:pd.DataFrame,
                           We:Union[int, float], 
                           Wf:Union[int, float],
                           Wp:Union[int, float]):
     
-    df['test_suite_start time'] = pd.to_datetime(df['test_suite_start time']) #将数据类型转换为日期类型
-    df = df.set_index('test_suite_start time')
+    df['job_start_time'] = pd.to_datetime(df['job_start_time']) #将数据类型转换为日期类型
+    df = df.set_index('job_start_time', drop=False)
     df = df.sort_index()
     
     all_tests_history = pd.DataFrame([])
     
-    postqueue_start_time = datetime.strptime(df.iloc[0, :]['job_start_time'], '%Y-%m-%d %H:%M:%S.%f')
-    postqueue_end_time = datetime.strptime(df.iloc[len(df)-1, :]['job_start_time'], '%Y-%m-%d %H:%M:%S.%f')
+    #postqueue_start_time = datetime.strptime(df.iloc[0, :]['job_start_time'], '%Y-%m-%d %H:%M:%S.%f')
+    postqueue_start_time = df.iloc[0, :]['job_start_time']
+    #postqueue_end_time = datetime.strptime(df.iloc[len(df)-1, :]['job_start_time'], '%Y-%m-%d %H:%M:%S.%f')
+    postqueue_end_time = df.iloc[len(df)-1, :]['job_start_time']
     while postqueue_start_time < postqueue_end_time:
-        print(postqueue_start_time)
+        #print("in split")
         postqueue_next_start_time = postqueue_start_time + timedelta(hours=Wp)
         wp_dataset = df[postqueue_start_time:postqueue_next_start_time]  
-        prioritized_tests_history = run_window_based_test_prioritization(list(range(10)), wp_dataset, We=24, Wf=48, Wp=12)
-        all_tests_history.append(prioritized_tests_history)
+        #print("wp size: ",wp_dataset.shape[0])
+        processed_tests_history = run_window_based_test_prioritization(wp_dataset, all_tests_history, We=24, Wf=48)
+        #print("优化后 size: ", processed_tests_history.shape[0], "    type: ", type(processed_tests_history))
+        all_tests_history = all_tests_history.append(processed_tests_history)
+        #print("所有执行历史 size: ",all_tests_history.shape[0])
         postqueue_start_time = postqueue_next_start_time
-    return all_tests_history
+    return all_tests_history # 按优先窗口调整的dataframe
     
     
 if __name__ == '__main__':
+    
     df = pd.read_csv("../output/cleaned_dataset_rail_100000_new_noindex.csv", sep=';', header=0)
     
-    all_tests_history = split_dataset_into_wp(list(range(10)), df, We=24, Wf=48, Wp=12)
+    all_tests_history = split_dataset_into_wp(df, We=24, Wf=48, Wp=12)
     print(all_tests_history.shape[0])
     
