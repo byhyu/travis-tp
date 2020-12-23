@@ -85,6 +85,9 @@ def run_window_based_test_selection(test_suite_inds: List, dataset: pd.DataFrame
     return all_tests_history
 
 
+
+
+
 if __name__ == '__main__':
     data_dir = Path(r'C:\Users\hyu\Documents\Nutstore\Abroad2020\LOG6703')
     rails_data_file = 'cleaned_dataset_rail_100000_new_noindex.csv'

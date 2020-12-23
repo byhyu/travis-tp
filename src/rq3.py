@@ -64,7 +64,7 @@ def run_window_based_test_prioritization(test_suite_inds:List,
         if test_name in existing_tests:
             is_new = False
             test_history = all_tests_history[all_tests_history['test_suite'] == test_name]
-            is_test_prioritized = window_based_test_prioritization(test_timestamp, test_history, We, Wf, Wp, is_new)
+            is_test_prioritized = is_prioritized(test_timestamp, test_history, We, Wf, Wp)
         else:
             is_test_prioritized = True
             existing_tests.add(test_name)
