@@ -32,6 +32,20 @@ def calc_APFD(all_test_index_list, failed_index_list):
     # APFD = 100*(1 - sum/(m*n) + 1/(2*n))
     return APFD
 
+def calc_first_fail_time(dataset):
+    """
+    Calculate first fail time for specific test suite. Will be used to generate Fig6 and Fig7 in 2014 paper.
+    Args:
+        dataset: input dataset. Should have at least these columns: ['test_suite', 'job_start_time' (or other time), 'build_status']
+
+    Returns:
+        dataframe with columns: ['test_suite','first_fail_time']
+
+    """
+    #TODO
+    failed_tests = dataset[dataset.build_status == 'failed']
+    # unique_failed_tests =
+
 
 if __name__ == '__main__':
     import pandas as pd

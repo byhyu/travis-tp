@@ -112,6 +112,9 @@ def run_window_based_prioritization(
 
     return test_run_history
 
+# compute time difference between prioritization oand no-prior
+#%%
+df1 = df[(df.test_suite=='railties/test/app_rails_loader_test.rb') & (df.build_status=='failed')]
 
 #%%
 if __name__ == '__main__':
