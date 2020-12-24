@@ -64,6 +64,11 @@ From the root of the repository, create a Conda environment:
  ```bash
    conda env create --file environment.yml
 ```
+### use conda env in `jupyter notebook`
+```
+conda install -c anaconda ipykernel
+python -m ipykernel install --user --name=travis-project
+```
 ### Option 2: use `venv` + `pip`
 TODO
 

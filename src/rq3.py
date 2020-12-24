@@ -117,4 +117,18 @@ if __name__ == '__main__':
     
     all_tests_history = split_dataset_into_wp(df, We=24, Wf=48, Wp=12)
     print(all_tests_history.shape[0])
+
+    #%%
+    from metrics import calc_APFD
+    # APFD before prioritization
+    failed_tests_before = df.index[df['build_status'] == 'failed'].tolist()
+    APFD_before = calc_APFD(list(range(df.shape[0])), failed_tests_before)
+
+
+    new_df = all_tests_history.reset_index() # change datetime index into integer index
+    failed_tests = new_df.index[new_df['build_status'] == 'failed'].tolist()
+    print(failed_tests)
+    APFD_after = calc_APFD(list(range(new_df.shape[0])), failed_tests)
+    print(f'APFD before: {APFD_before}')
+    print(f'APFD after:{APFD_after}')
     
