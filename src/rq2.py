@@ -76,6 +76,7 @@ def run_window_based_test_selection(dataset:pd.DataFrame,
 
     return all_tests_history
 
+# 给初始的dataframe打是否necessary标记
 def tag_redundancy(dataset:pd.DataFrame):
     dataset['is_necessary'] = df.apply(lambda x: True if x.build_status != 'passed' else False, axis=1)
     return dataset
