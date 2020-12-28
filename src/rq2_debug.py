@@ -3,12 +3,12 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from typing import List, Union
-from tqdm import tqdm
+#from tqdm import tqdm
 
 def update_unnecessary_patterns(all_tests_history):
     unnecessary_patterns = pd.DataFrame([])
     for name, group in all_tests_history.groupby(['test_suite','job_env']):
-        if (group['build_status'] == "passed").all():
+        if (group['build_status'] == "failed").all():
             pattern_df = pd.DataFrame([[name[0],name[1],'none']], 
                                       columns=['test_suite', 'job_env', 'job_rvm'])
             unnecessary_patterns = unnecessary_patterns.append(pattern_df)
@@ -81,23 +81,20 @@ def run_window_based_test_selection(dataset:pd.DataFrame,
         Wf: Failure window in hours, refer to 2014 paper for details
     Returns:
     """
-    count = 0
+    
     existing_tests = set()
+    
     unnecessary_patterns = pd.DataFrame([])
-    
-    test_selection = []
-    accumulated_runtime = 0
-    all_tests_history = pd.DataFrame([])
     tag_time = dataset.loc[0, 'test_suite_start time']
-    #print("tag_time:    ",  tag_time)
     
+    all_tests_history = pd.DataFrame([])
+    accumulated_runtime = 0
+    count = 0
     for index, row in dataset.iterrows():
         test_name = row['test_suite']
         test_timestamp = row['test_suite_start time']
-        #print("test_timestamp: ",test_timestamp)
-        is_nece = is_test_necessary(row, unnecessary_patterns)
-        #is_nece = True
-        if is_nece:
+        
+        if is_test_necessary(row, unnecessary_patterns):
             if test_name in existing_tests:
                 is_new = False
                 test_history = all_tests_history[all_tests_history['test_suite'] == test_name]
@@ -108,7 +105,6 @@ def run_window_based_test_selection(dataset:pd.DataFrame,
             
             if to_run_test:
                 #accumulated_runtime += test_row.build_duration
-                test_name = row['test_suite']
                 build_status = row.build_status
                 exec_time = row.test_suite_duration
                 job_env = row.job_env
@@ -123,18 +119,15 @@ def run_window_based_test_selection(dataset:pd.DataFrame,
                                              })
                 test_df.sort_index(inplace=True)
                 all_tests_history = all_tests_history.append(test_df) 
-                #print("=========================================================")
-                #print(all_tests_history.head(1))
                 
                 # check if we need to tag the dataset based on GEM and ruby version in the Wt window
                 if test_timestamp >= tag_time:
-                    
                     unnecessary_patterns = update_unnecessary_patterns(all_tests_history)
                     tag_time = tag_time + timedelta(hours=Wt)
-                    #print("new tag_time  : ", tag_time)
         else:
             count = count + 1
-    print("count = ", count)
+    print("unnecessary count = ", count)
+    print(unnecessary_patterns['job_rvm'].drop_duplicates())
     return all_tests_history
 
 
@@ -142,11 +135,11 @@ if __name__ == '__main__':
     df = pd.read_csv("../output/cleaned_dataset_rail_100000_new_noindex.csv", sep=';', header=0)
     df['test_suite_start time'] = pd.to_datetime(df['test_suite_start time']) #将数据类型转换为日期类型
     df.sort_values('test_suite_start time', inplace=True)
-    #df = df.head(1000) # 112
-    #df = df.head(10000) # 791
-    #df = df.head(1000)
-    df = df.head(2000) # 645
-    df = df.head(1000) # 645
-    
-    all_tests_history = run_window_based_test_selection(df, We=24, Wf=48, Wt=0)
+    #df = df.head(1000) # 加是否necessary前：112
+    #df = df.head(2000) # 加是否necessary前：416
+    #df = df.head(3000) # 加是否necessary前：489
+    #df = df.head(4000) # 加是否necessary前：677
+    #df = df.head(5000)  # 加是否necessary前：684 
+    df = df.head(10000) # 加是否necessary前：799
+    all_tests_history = run_window_based_test_selection(df, We=24, Wf=48, Wt=1)
     print(all_tests_history.shape)
