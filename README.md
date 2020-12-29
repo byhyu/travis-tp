@@ -29,6 +29,12 @@ If I understand correctly, we are shifting our focus from energy consumption to 
 
 => Yes, you would just need to crosslink each build with its corresponding Ruby/Gem information.
 
+## Future Work
+(1) Full Dataset, currently 100,000 test suites   
+(2) Focused on commit level first, then on detailed <Gem, Ruby> level   
+(3)
+
+
 ## Research Questions
 So, the goal of the project could be to address the following RQs:
 1. How common are the above cases of test execution redundancy?
