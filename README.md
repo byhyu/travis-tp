@@ -89,5 +89,25 @@ In the implementation of the additional method the following details were consid
 1. Whenever there is a tie between multiple test cases with
 the same additional coverage, the test case with `less execution time` is chosen.
 
+## Draft
+exec_time
+recall_rate  (failed cases found / total failed cases)
 
+
+20000 - 1687 = 18313 (your algo filtered out)
+18313 = 15646 + 2667
+15646 : baseline model
+2667 : use patterns
+
+test suite
+
+if is_selected(): # True
+    select using baseline model
+    if not window_based_selection():
+        skip_by_baseline_model.append(test suite index)
+
+else: # False
+    skip_by_patterns.append(test suite index)
+
+len(skip_by_patterns) = 2667
 

@@ -161,6 +161,8 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
         output_dir = Path('expriment_results')
         output_dir.mkdir(parents=True, exist_ok=True)
 
+
+
     experiment_id = 0
     res = pd.DataFrame([])
     res = []
@@ -169,6 +171,12 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
         for Wf in Wf_list:
             for Wt in Wt_list:
                 experiment_id += 1
+                experiment_name = f'df{df_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
+                experiment_file = output_dir / f'{experiment_name}.csv'
+                if experiment_file.exists():
+                    print('experiment file already exists. Skip.')
+                    continue
+
                 print('**' * 10)
                 print(f'running experiment {experiment_id}, dataset length: {df_length}, We={We}, Wf={Wf},Wt={Wt}')
 
@@ -177,13 +185,13 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
                 all_tests_history_use_patterns, skip_by_use_patterns = run_window_based_test_selection(df, We=We, Wf=Wf,
                                                                                                        Wt=Wt,
                                                                                                        use_patterns=True)
-
+                accum_exec_time = all_tests_history['exec_time'].sum()
                 num_tests = len(all_tests_history)
                 num_tests_use_patterns = len(all_tests_history_use_patterns)
                 num_skipped_by_baseline_model = len(skip_by_use_patterns['skip_by_baseline_mode'])
                 num_skipped_by_patterns = len(skip_by_use_patterns['skip_by_patterns'])
                 res.append([experiment_id, df_length, We, Wf, Wt, num_tests, num_tests_use_patterns,
-                            num_skipped_by_baseline_model, num_skipped_by_patterns])
+                            num_skipped_by_baseline_model, num_skipped_by_patterns, accum_exec_time])
                 print('--' * 10)
                 print(f'finished experiment {experiment_id}, dataset length: {df_length}, We={We}, Wf={Wf},Wt={Wt}')
                 print(f'results: '
@@ -232,7 +240,7 @@ if __name__ == '__main__':
     # df = df.head(4000) # 加是否necessary前：677
     # df = df.head(5000)  # 加是否necessary前：684
     # df = df.head(10000) # 加是否necessary前：799
-    # all_tests_history, skip_by = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=False)
+    all_tests_history, skip_by = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=False)
     # all_tests_history_use_patterns, skip_by1 = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=True)
     # print(all_tests_history.shape)
     # print(all_tests_history_use_patterns.shape)
@@ -241,17 +249,18 @@ if __name__ == '__main__':
     # Wf_list = [1,2,4,8,12,24]
     # Wt_list = [1,4,8,12,24]
 
-    We_list = [1, 4, 8]
-    Wf_list = [4, 8, 12]
+    We_list = [1]
+    Wf_list = [1,2,4,6 8,10, 12]
     Wt_list = [1, 4]
 
-    res_df = run_parametric_study(df=df.head(20000),
+    res_df = run_parametric_study(df=df.head(100000),
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
                                   save_to_file=True)
     print(res_df)
-
-    # to load a pickle file:
-    # with open(filename,'rb') as f:
-    #     res = pickle.load(f)
+    #%%
+    #to load a pickle file:
+    filename = Path(r'C:\Users\hyu\github-repos\travis-tp\src\expriment_results\df1000_We4_Wf6_Wt1_history_skipby.pickle')
+    with open(filename,'rb') as f:
+        skipby_res = pickle.load(f)
