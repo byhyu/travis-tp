@@ -237,15 +237,15 @@ if __name__ == '__main__':
     # print(all_tests_history.shape)
     # print(all_tests_history_use_patterns.shape)
     #
-    We_list = [1,2,4,8,12,24]
-    Wf_list = [1,2,4,8,12,24]
-    Wt_list = [1,4,8,12,24]
+    # We_list = [1,2,4,8,12,24]
+    # Wf_list = [1,2,4,8,12,24]
+    # Wt_list = [1,4,8,12,24]
 
-    # We_list = [1, 2, 4, 8]
-    # Wf_list = [4, 8, 12, 24]
-    # Wt_list = [1, 4]
+    We_list = [1, 4, 8]
+    Wf_list = [4, 8, 12]
+    Wt_list = [1, 4]
 
-    res_df = run_parametric_study(df=df.head(100000),
+    res_df = run_parametric_study(df=df.head(20000),
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
