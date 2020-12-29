@@ -29,6 +29,7 @@ If I understand correctly, we are shifting our focus from energy consumption to 
 
 => Yes, you would just need to crosslink each build with its corresponding Ruby/Gem information.
 
+
 ## Research Questions
 So, the goal of the project could be to address the following RQs:
 1. How common are the above cases of test execution redundancy?
@@ -71,6 +72,13 @@ python -m ipykernel install --user --name=travis-project
 ```
 ### Option 2: use `venv` + `pip`
 TODO
+
+## Future Work
+(1) Full Dataset, currently 100,000 test suites   
+(2) Focused on commit level first, then on detailed <Gem, Ruby> level   
+(3) calculate the accumulated time, preprocess中新增一列 ts_start_time 用于计算从0开始的时间
+(4) 第一条<GEM, Ruby>需要执行
+
 
 ## Reference
 [1] FSE204 paper (Elbaum et al.) 2014 using Google datasets only, focused on test suite selection and prioritization (failure window + idle window + new).   
