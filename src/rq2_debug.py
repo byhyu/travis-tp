@@ -9,7 +9,7 @@ import pickle
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Union
-
+import time
 import pandas as pd
 
 
@@ -138,7 +138,7 @@ def run_window_based_test_selection(dataset: pd.DataFrame,
                 # check if we need to tag the dataset based on GEM and ruby version in the Wt window
                 if test_timestamp >= tag_time:
                     unnecessary_patterns = update_unnecessary_patterns(all_tests_history)
-                    print(f'new patterns length: {unnecessary_patterns.shape}')
+                    # print(f'new patterns length: {unnecessary_patterns.shape}')
                     tag_time = tag_time + timedelta(hours=Wt)
                     # print(f'new tag time:{tag_time}')
             else:  # to_run_test = False
@@ -149,9 +149,9 @@ def run_window_based_test_selection(dataset: pd.DataFrame,
             # print(f'unnecessary test: {row["test_suite"]}')
             count = count + 1
     print("unnecessary count = ", count)
-    print(unnecessary_patterns['job_rvm'].drop_duplicates())
-    print(f' skip_by_patterns :{len(skip_by_patterns)}')
-    print(f' skip_by_baseline_model :{len(skip_by_baseline_model)}')
+    # print(unnecessary_patterns['job_rvm'].drop_duplicates())
+    # print(f' skip_by_patterns :{len(skip_by_patterns)}')
+    # print(f' skip_by_baseline_model :{len(skip_by_baseline_model)}')
     skip_by = {'skip_by_patterns': skip_by_patterns, 'skip_by_baseline_mode': skip_by_baseline_model}
     return all_tests_history, skip_by
 
@@ -159,67 +159,98 @@ def run_window_based_test_selection(dataset: pd.DataFrame,
 def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, output_dir=None):
     if output_dir is None:
         output_dir = Path('expriment_results')
-        output_dir.mkdir(parents=True, exist_ok=True)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
 
 
 
     experiment_id = 0
-    res = pd.DataFrame([])
+    # res = pd.DataFrame([])
     res = []
-    df_length = df.shape[0]
+    dataset_length = df.shape[0]
+
+    num_fail_cases_all = df[df['build_status'] == 'failed'].shape[0]
+
     for We in We_list:
         for Wf in Wf_list:
             for Wt in Wt_list:
+                time_start = time.time()
                 experiment_id += 1
-                experiment_name = f'df{df_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
+                experiment_name = f'df{dataset_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
                 experiment_file = output_dir / f'{experiment_name}.csv'
+
                 if experiment_file.exists():
                     print('experiment file already exists. Skip.')
                     continue
 
                 print('**' * 10)
-                print(f'running experiment {experiment_id}, dataset length: {df_length}, We={We}, Wf={Wf},Wt={Wt}')
+                print(f'running experiment {experiment_id}, dataset length: {dataset_length}, We={We}, Wf={Wf},Wt={Wt}')
 
                 all_tests_history, skip_by = run_window_based_test_selection(df, We=We, Wf=Wf, Wt=Wt,
                                                                              use_patterns=False)
                 all_tests_history_use_patterns, skip_by_use_patterns = run_window_based_test_selection(df, We=We, Wf=Wf,
                                                                                                        Wt=Wt,
                                                                                                        use_patterns=True)
-                accum_exec_time = all_tests_history['exec_time'].sum()
-                num_tests = len(all_tests_history)
-                num_tests_use_patterns = len(all_tests_history_use_patterns)
+                # accum_exec_time = all_tests_history['exec_time'].sum()
+                num_selected_tests_baseline = len(all_tests_history)
+                num_selected_tests_use_patterns = len(all_tests_history_use_patterns)
                 num_skipped_by_baseline_model = len(skip_by_use_patterns['skip_by_baseline_mode'])
                 num_skipped_by_patterns = len(skip_by_use_patterns['skip_by_patterns'])
-                res.append([experiment_id, df_length, We, Wf, Wt, num_tests, num_tests_use_patterns,
-                            num_skipped_by_baseline_model, num_skipped_by_patterns, accum_exec_time])
+
+                total_exec_time_baseline = all_tests_history['exec_time'].sum()
+                total_exec_time_use_patterns = all_tests_history_use_patterns['exec_time'].sum()
+                num_fail_cases_baseline = all_tests_history[all_tests_history['build_status']=='failed'].shape[0]
+                num_fail_cases_use_patterns = all_tests_history_use_patterns[all_tests_history_use_patterns['build_status']=='failed'].shape[0]
+
+                percentage_fail_cases_baseline = num_fail_cases_baseline / num_fail_cases_all
+                percentage_fail_cases_use_patterns = num_fail_cases_use_patterns / num_fail_cases_all
+                # append current results to res
+                res.append([experiment_id, dataset_length,
+                            We, Wf, Wt,
+                            num_fail_cases_all,
+                            num_selected_tests_baseline, num_selected_tests_use_patterns,
+                            total_exec_time_baseline, total_exec_time_use_patterns,
+                            num_fail_cases_baseline, num_fail_cases_use_patterns,
+                            percentage_fail_cases_baseline, percentage_fail_cases_use_patterns])
+                time_end = time.time()
+
                 print('--' * 10)
-                print(f'finished experiment {experiment_id}, dataset length: {df_length}, We={We}, Wf={Wf},Wt={Wt}')
-                print(f'results: '
-                      f'num_selected_tests_baseline: {num_tests}, '
-                      f'num_selected_tests_use_patterns: {num_tests_use_patterns},'
-                      f'num_skipped_by_baseline_model:{num_skipped_by_baseline_model},'
-                      f'num_skipped_by_patterns:{num_skipped_by_patterns}')
+                print(f'finished experiment {experiment_id}, dataset length: {dataset_length}, We={We}, Wf={Wf},Wt={Wt}')
+                print(f'results: \n'
+                      f'num_selected_tests_baseline: {num_selected_tests_baseline}, \n'
+                      f'num_selected_tests_use_patterns: {num_selected_tests_use_patterns},\n'
+                      f'num_skipped_by_baseline_model:{num_skipped_by_baseline_model},\n'
+                      f'num_skipped_by_patterns:{num_skipped_by_patterns}\n'
+                      )
+                print(f'run time on local computer:{time_end - time_start} seconds \n')
                 print('--' * 10)
 
                 if save_to_file:
                     # save results to file
-                    experiment_name = f'df{df_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
+                    experiment_name = f'df{dataset_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
                     all_tests_history.to_csv(output_dir / f'{experiment_name}.csv')
                     all_tests_history_use_patterns.to_csv(output_dir / f'{experiment_name}_use_patterns.csv')
 
-                    # write skip_by to file
-                    with open(output_dir / f'{experiment_name}_skipby.pickle', 'wb') as f:
-                        pickle.dump(skip_by, f)
+                    # # write skip_by to file
+                    # with open(output_dir / f'{experiment_name}_skipby.pickle', 'wb') as f:
+                    #     pickle.dump(skip_by, f)
+                    #
+                    # with open(output_dir / f'{experiment_name}_skipby_use_patterns.pickle', 'wb') as f:
+                    #     pickle.dump(skip_by_use_patterns, f)
+                    
 
-                    with open(output_dir / f'{experiment_name}_skipby_use_patterns.pickle', 'wb') as f:
-                        pickle.dump(skip_by_use_patterns, f)
-                    
-                    
+    res_col_names = ['experiment_id', 'dataset_length',
+                     'We', 'Wf', 'Wt',
+                     'num_fail_cases_all',
+                     'num_selected_tests_baseline', 'num_selected_tests_use_patterns',
+                     'total_exec_time_baseline', 'total_exec_time_use_patterns',
+                     'num_fail_cases_baseline', 'num_fail_cases_use_patterns',
+                     'percentage_fail_cases_baseline', 'percentage_fail_cases_use_patterns'
+                     ]
 
     res_df = pd.DataFrame(res,
-                          columns=['experiment_id', 'dataset_length', 'We', 'Wf', 'Wt', 'num_selected_tests_baseline',
-                                   'num_selected_tests_use_patterns', 'num_skipped_by_baseline_model',
-                                   'num_skipped_by_patterns'])
+                          columns=res_col_names)
+
     datetime_now = datetime.now().strftime('%Y%m%d-%H%M%S')
     res_df.to_csv(output_dir / f'final_results_{datetime_now}_{experiment_name}.csv')
 
@@ -240,7 +271,7 @@ if __name__ == '__main__':
     # df = df.head(4000) # 加是否necessary前：677
     # df = df.head(5000)  # 加是否necessary前：684
     # df = df.head(10000) # 加是否necessary前：799
-    all_tests_history, skip_by = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=False)
+    # all_tests_history, skip_by = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=False)
     # all_tests_history_use_patterns, skip_by1 = run_window_based_test_selection(df, We=4, Wf=12, Wt=1, use_patterns=True)
     # print(all_tests_history.shape)
     # print(all_tests_history_use_patterns.shape)
@@ -248,19 +279,68 @@ if __name__ == '__main__':
     # We_list = [1,2,4,8,12,24]
     # Wf_list = [1,2,4,8,12,24]
     # Wt_list = [1,4,8,12,24]
-
-    We_list = [1]
-    Wf_list = [1,2,4,6 8,10, 12]
-    Wt_list = [1, 4]
-
-    res_df = run_parametric_study(df=df.head(100000),
+    # 
+    # We_list = [1]
+    # Wf_list = [1,2,4,6 8,10, 12]
+    # Wt_list = [1, 4]
+    # 
+    # res_df = run_parametric_study(df=df.head(100000),
+    #                               We_list=We_list,
+    #                               Wf_list=Wf_list,
+    #                               Wt_list=Wt_list,
+    #                               save_to_file=True)
+    # print(res_df)
+    #%%
+    # fig 6 in 2014 paper
+    Wf_list = [0.25, 0.5,1, 2, 4, 12, 24,36]
+    # Wf_list = [0.25, 0.5]
+    We_list = [0.5]
+    Wt_list = [1]
+    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v2'
+    #%%
+    res_df = run_parametric_study(df=df.head(50000),
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
-                                  save_to_file=True)
-    print(res_df)
+                                  save_to_file=True,
+                                  output_dir=output_dir)
+
+    #%%
+    # calculate percentage of number of selected tests: [number of selected tests]/[total number of tests]
+    res_df['percentage_tests_baseline'] = res_df['num_selected_tests_baseline'] / res_df['dataset_length']
+    res_df['percentage_tests_use_patterns'] = res_df['num_selected_tests_use_patterns'] / res_df['dataset_length']
+    # %%
+    # choose We = 1, as in Figure 6 from 2014 paper. Also fix Wt = 1
+    # sub_df1 = res_df[(res_df['Wf'] == 2) & (res_df['Wt'] == 1)]
+    sub_df1 = res_df
+    # %%
+    # plot
+    import matplotlib.pyplot as plt
+    fig = plt.figure()
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_tests_baseline'].values, color='r', linestyle='-',marker='*',label='Test suites -- Baseline model')
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='*',label='Test suites --Use patterns')
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',
+             label='Failed cases -- Baseline model')
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='g', linestyle='-.',
+             label='Failed cases -- Use patterns')
+    plt.legend()
+    plt.grid()
+    plt.xlabel('W_e (Hour)')
+    plt.ylabel('Percentage compared to original test suites')
+    plt.tight_layout()
+    plt.show()
+    fig.savefig(output_dir/'rq2_plot.png', dpi=300)
+
+#%%
+    plt.figure()
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r',linestyle='-.', label='Failed cases -- Baseline model')
+    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_use_patterns'].values,color='g',linestyle='-.',label='Failed cases -- Use patterns')
+    plt.legend()
+    plt.grid()
+    plt.tight_layout()
+    plt.show()
     #%%
     #to load a pickle file:
-    filename = Path(r'C:\Users\hyu\github-repos\travis-tp\src\expriment_results\df1000_We4_Wf6_Wt1_history_skipby.pickle')
-    with open(filename,'rb') as f:
-        skipby_res = pickle.load(f)
+    # filename = Path(r'C:\Users\hyu\github-repos\travis-tp\src\expriment_results\df1000_We4_Wf6_Wt1_history_skipby.pickle')
+    # with open(filename,'rb') as f:
+    #     skipby_res = pickle.load(f)
