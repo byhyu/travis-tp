@@ -76,7 +76,7 @@ TODO
 ## Future Work
 (1) Full Dataset, currently 100,000 test suites   
 (2) Focused on commit level first, then on detailed <Gem, Ruby> level   
-(3)
+(3) calculate the accumulated time
 
 
 ## Reference
