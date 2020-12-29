@@ -152,23 +152,25 @@ def split_dataset_into_wp(df:pd.DataFrame,
     
     
 if __name__ == '__main__':
-    
+    #%%
     df = pd.read_csv("../output/cleaned_dataset_rail_100000_new_noindex.csv", sep=';', header=0)
-    df['test_suite_start_time'] = pd.to_datetime(df['test_suite_start_time']) #将数据类型转换为日期类型
+    df['test_suite_start_time'] = pd.to_datetime(df['test_suite_start time']) #将数据类型转换为日期类型
     df = df.set_index('test_suite_start_time', drop=False)
     df = df.sort_index()
     df = df.head(10000)
-    all_tests_history = split_dataset_into_wp(df, We=4, Wf=12, Wp=1)
+    #%%
+    all_tests_history = split_dataset_into_wp(df, We=12, Wf=24, Wp=2)
     
     print(all_tests_history.shape)
     
     print("priority 1: ", all_tests_history.loc[all_tests_history['priority'] == 1])
     
-    %%
+    #%%
     from metrics import calc_APFD
     # APFD before prioritization
-    failed_tests_before = df.index[df['build_status'] == 'failed'].tolist()
-    APFD_before = calc_APFD(list(range(df.shape[0])), failed_tests_before)
+    df1 = df.reset_index(drop=True) # calc_APFD 要求 int index， 不是 datetime index
+    failed_tests_before = df1.index[df1['build_status'] == 'failed'].tolist()
+    APFD_before = calc_APFD(list(range(df1.shape[0])), failed_tests_before)
 
     new_df = all_tests_history.reset_index() # change datetime index into integer index
     failed_tests = new_df.index[new_df['build_status'] == 'failed'].tolist()
