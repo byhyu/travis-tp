@@ -189,3 +189,32 @@ if __name__ == '__main__':
     #APFD_after = calc_APFD(list(range(new_df.shape[0])), failed_tests)
     #print(f'APFD before: {APFD_before}')
     #print(f'APFD after:{APFD_after}')
+    
+    ###########
+    import matplotlib.pyplot as plt
+
+    test = all_tests_history[all_tests_history.build_status=='failed'][['test_suite', 'cum_start_time_before', 'cum_start_time_after', 'build_status']]
+    #test = test.sort_values('test_id')
+    #test = test.sort_values('cum_start_time_before', ascending=True).groupby(['test_suite']).first()
+    
+    test_before = test[['test_suite','cum_start_time_before']].groupby('test_suite', group_keys=False).apply(
+        lambda x: x.sort_values('cum_start_time_before', ascending=True)).groupby('test_suite').first()
+      
+    test_after = test[['test_suite','cum_start_time_after']].groupby('test_suite', group_keys=False).apply(
+        lambda x: x.sort_values('cum_start_time_after', ascending=True)).groupby('test_suite').first()
+    #print(test_before.index)
+    #display(test_before)
+    
+    #display(test_after)
+    new_df = test_before.join(test_after)
+    #display(new_df)
+    new_df = new_df.tail(10)
+    new_df.sort_values("cum_start_time_before", inplace=True)
+    new_df.plot()
+    plt.show()
+    #test = test.set_index('test_suite', drop=False)
+    #test['cum_start_time_before'].plot(label='W_p=0h')
+    #print(test)
+    #display(test.head(4000))
+    #test.plot()
+    #plt.show()
