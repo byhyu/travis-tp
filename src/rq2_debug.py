@@ -79,11 +79,14 @@ def window_based_test_selection(test_timestamp: datetime,
         return True
     return False
 
+from collections import deque
+
 
 def run_window_based_test_selection(dataset: pd.DataFrame,
                                     We: Union[int, float],
                                     Wf: Union[int, float],
                                     Wt: Union[int, float],
+                                    Wu: Union[int, float] = 4,
                                     use_patterns: bool = True):
     """
     Args:
@@ -161,6 +164,8 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
         output_dir = Path('expriment_results')
 
     output_dir.mkdir(parents=True, exist_ok=True)
+    
+    df1 = df.reset_index(drop=True)
 
 
 
@@ -186,19 +191,34 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
                 print('**' * 10)
                 print(f'running experiment {experiment_id}, dataset length: {dataset_length}, We={We}, Wf={Wf},Wt={Wt}')
 
-                all_tests_history, skip_by = run_window_based_test_selection(df, We=We, Wf=Wf, Wt=Wt,
-                                                                             use_patterns=False)
+                # all_tests_history, skip_by = run_window_based_test_selection(df, We=We, Wf=Wf, Wt=Wt,
+                #                                                              use_patterns=False)
                 all_tests_history_use_patterns, skip_by_use_patterns = run_window_based_test_selection(df, We=We, Wf=Wf,
                                                                                                        Wt=Wt,
                                                                                                        use_patterns=True)
+                
+                # all_tests_history_use_patterns.reset_index()
+                
+                skip_by_baseline = df1.index.isin(list(skip_by_use_patterns['skip_by_baseline_mode']))
+                
+                all_tests_history =df1[~skip_by_baseline]
+                print(f'len all tests history:{len(all_tests_history)}')
+                print(f'len all tests history use patterns:{len(all_tests_history_use_patterns)}')
                 # accum_exec_time = all_tests_history['exec_time'].sum()
-                num_selected_tests_baseline = len(all_tests_history)
+                # num_selected_tests_baseline = len(all_tests_history)
+                
                 num_selected_tests_use_patterns = len(all_tests_history_use_patterns)
                 num_skipped_by_baseline_model = len(skip_by_use_patterns['skip_by_baseline_mode'])
                 num_skipped_by_patterns = len(skip_by_use_patterns['skip_by_patterns'])
+                
+                num_selected_tests_baseline = dataset_length - num_skipped_by_baseline_model
+                
 
-                total_exec_time_baseline = all_tests_history['exec_time'].sum()
+                total_exec_time_baseline = all_tests_history['test_suite_duration'].sum()
+                
+                
                 total_exec_time_use_patterns = all_tests_history_use_patterns['exec_time'].sum()
+                
                 num_fail_cases_baseline = all_tests_history[all_tests_history['build_status']=='failed'].shape[0]
                 num_fail_cases_use_patterns = all_tests_history_use_patterns[all_tests_history_use_patterns['build_status']=='failed'].shape[0]
 
@@ -221,6 +241,8 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
                       f'num_selected_tests_use_patterns: {num_selected_tests_use_patterns},\n'
                       f'num_skipped_by_baseline_model:{num_skipped_by_baseline_model},\n'
                       f'num_skipped_by_patterns:{num_skipped_by_patterns}\n'
+                      f'total exect time baseline: {total_exec_time_baseline} \n'
+                      f'total exect time use patterns: {total_exec_time_use_patterns} \n'
                       )
                 print(f'run time on local computer:{time_end - time_start} seconds \n')
                 print('--' * 10)
@@ -230,6 +252,7 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
                     experiment_name = f'df{dataset_length}_We{We}_Wf{Wf}_Wt{Wt}_history'
                     all_tests_history.to_csv(output_dir / f'{experiment_name}.csv')
                     all_tests_history_use_patterns.to_csv(output_dir / f'{experiment_name}_use_patterns.csv')
+                    print(f'time to save data files: {time.time() - time_end}')
 
                     # # write skip_by to file
                     # with open(output_dir / f'{experiment_name}_skipby.pickle', 'wb') as f:
@@ -259,7 +282,7 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
           f'{res_df}')
     print('==' * 10)
     return res_df
-
+#%%
 
 if __name__ == '__main__':
     #%%
@@ -293,41 +316,88 @@ if __name__ == '__main__':
     # print(res_df)
     #%%
     # fig 6 in 2014 paper
-    Wf_list = [0.25, 0.5,1,2,4,8]
+    Wf_list = [0.5,1,2,3,4,5]
     # Wf_list = [0.25, 0.5]
-    We_list = [0.5]
-    Wt_list = [1]
-    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v4'
+    We_list = [3]
+    Wt_list = [0.5]
+    input_df = df.head(10000)
+    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v10'
     #%%
-    res_df = run_parametric_study(df=df.head(20000),
+    res_df = run_parametric_study(df=input_df,
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
                                   save_to_file=True,
                                   output_dir=output_dir)
-
+    
     #%%
+    total_exec_time_original = input_df['test_suite_duration'].sum()
+    
+    
     # calculate percentage of number of selected tests: [number of selected tests]/[total number of tests]
     res_df['percentage_tests_baseline'] = res_df['num_selected_tests_baseline'] / res_df['dataset_length']
     res_df['percentage_tests_use_patterns'] = res_df['num_selected_tests_use_patterns'] / res_df['dataset_length']
+    res_df['percentage_exec_time_baseline'] = res_df['total_exec_time_baseline']/total_exec_time_original
+    res_df['percentage_exec_time_use_patterns'] = res_df['total_exec_time_use_patterns']/total_exec_time_original
+    
+    sub_df1 = res_df
     # %%
     # choose We = 1, as in Figure 6 from 2014 paper. Also fix Wt = 1
     # sub_df1 = res_df[(res_df['Wf'] == 2) & (res_df['Wt'] == 1)]
-    sub_df1 = res_df
+    
     # %%
     # plot
     import matplotlib.pyplot as plt
+    import matplotlib.ticker as mtick
     fig = plt.figure()
-    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_baseline'].values, color='r', linestyle='-',marker='*',label='Test suites -- Baseline model')
-    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='*',label='Test suites --Use patterns')
-    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',
-             label='Failed cases -- Baseline model')
-    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='g', linestyle='-.',
-             label='Failed cases -- Use patterns')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_exec_time_baseline'].values,
+                 color='k', linestyle='--',marker='+', linewidth=2,
+                 label='Total execution time -- Baseline model')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_exec_time_use_patterns'].values,
+                color='k', linestyle='-',marker='+', linewidth=2,
+                label='Total execution time -- Use patterns')
+    # axs[0].yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
+    
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_baseline'].values, color='g', linestyle='dashdot',marker='d',label='Test suites -- Baseline model')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='d',label='Test suites --Use patterns')
+    
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',marker='*',
+              label='Failed cases -- Baseline model')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='r', linestyle='-',marker='*',
+              label='Failed cases -- Use patterns')
+    ax = plt.gca()
+    ax.yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
     plt.legend()
     plt.grid()
     plt.xlabel('W_f (Hour)')
     plt.ylabel('Percentage compared to original test suites')
+    plt.title('')
+    plt.tight_layout()
+    plt.show()
+    fig.savefig(output_dir/'rq2_plot.png', dpi=300)
+    #%%
+    fig, axs = plt.subplots(1,1)
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_exec_time_baseline'].values,
+                 color='k', linestyle='--',marker='+', linewidth=2,
+                 label='Total execution time -- Baseline model')
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_exec_time_use_patterns'].values,
+                color='k', linestyle='-',marker='+', linewidth=2,
+                label='Total execution time -- Use patterns')
+    # axs[0].yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
+    
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_tests_baseline'].values, color='r', linestyle='-',marker='*',label='Test suites -- Baseline model')
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='*',label='Test suites --Use patterns')
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',
+              label='Failed cases -- Baseline model')
+    axs[0].plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='g', linestyle='-.',
+              label='Failed cases -- Use patterns')
+    # ax = plt.gca()
+    axs[0].yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
+    plt.legend()
+    plt.grid()
+    plt.xlabel('W_f (Hour)')
+    plt.ylabel('Percentage compared to original test suites')
+    plt.title('')
     plt.tight_layout()
     plt.show()
     fig.savefig(output_dir/'rq2_plot.png', dpi=300)
