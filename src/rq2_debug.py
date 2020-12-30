@@ -73,7 +73,7 @@ def window_based_test_selection(test_timestamp: datetime,
 
     exec_start = test_timestamp - timedelta(hours=We)
     fail_start = test_timestamp - timedelta(hours=Wf)
-    Wf_cond = any(test_run_history[fail_start:test_timestamp].build_status == 'FAIL')
+    Wf_cond = len(test_run_history[fail_start:test_timestamp].build_status == 'failed') >= 1
     We_cond = test_run_history[exec_start:test_timestamp].shape[0] == 0
     if We_cond or Wf_cond:
         return True
@@ -262,6 +262,7 @@ def run_parametric_study(df, We_list, Wf_list, Wt_list, save_to_file=True, outpu
 
 
 if __name__ == '__main__':
+    #%%
     df = pd.read_csv("../output/cleaned_dataset_rail_100000_new_noindex.csv", sep=';', header=0)
     df['test_suite_start time'] = pd.to_datetime(df['test_suite_start time'])  # 将数据类型转换为日期类型
     df.sort_values('test_suite_start time', inplace=True)
@@ -292,13 +293,13 @@ if __name__ == '__main__':
     # print(res_df)
     #%%
     # fig 6 in 2014 paper
-    Wf_list = [0.25, 0.5,1, 2, 4, 12, 24,36]
+    Wf_list = [0.25, 0.5,1]
     # Wf_list = [0.25, 0.5]
     We_list = [0.5]
     Wt_list = [1]
-    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v2'
+    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v3'
     #%%
-    res_df = run_parametric_study(df=df.head(50000),
+    res_df = run_parametric_study(df=df.head(10000),
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
@@ -332,14 +333,14 @@ if __name__ == '__main__':
     fig.savefig(output_dir/'rq2_plot.png', dpi=300)
 
 #%%
-    plt.figure()
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r',linestyle='-.', label='Failed cases -- Baseline model')
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_use_patterns'].values,color='g',linestyle='-.',label='Failed cases -- Use patterns')
-    plt.legend()
-    plt.grid()
-    plt.tight_layout()
-    plt.show()
-    #%%
+    # plt.figure()
+    # plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r',linestyle='-.', label='Failed cases -- Baseline model')
+    # plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_use_patterns'].values,color='g',linestyle='-.',label='Failed cases -- Use patterns')
+    # plt.legend()
+    # plt.grid()
+    # plt.tight_layout()
+    # plt.show()
+    # #%%
     #to load a pickle file:
     # filename = Path(r'C:\Users\hyu\github-repos\travis-tp\src\expriment_results\df1000_We4_Wf6_Wt1_history_skipby.pickle')
     # with open(filename,'rb') as f:
