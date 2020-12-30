@@ -86,8 +86,14 @@ def prioritize_test(test_row:pd.Series,
     if not test_run_history.empty: 
         test_run_history = test_run_history.sort_index()
         
-        is_faulty = any(test_run_history[fail_start:test_timestamp].build_status=='failed')
+        #is_faulty = any(test_run_history[fail_start:test_timestamp].build_status=='failed')
+        is_faulty = (len(test_run_history[fail_start:test_timestamp].build_status == 'failed') >= 1)
+        #is_idle = (test_run_history[exec_start:test_timestamp].shape[0] == 0)
         is_idle = (test_run_history[exec_start:test_timestamp].shape[0] == 0)
+        
+        #Wf_cond = len(test_run_history[fail_start:test_timestamp].build_status == 'failed') >= 1
+        #We_cond = test_run_history[exec_start:test_timestamp].shape[0] == 0
+        
         if is_faulty or is_idle: 
             test_df['priority'] = 2
             return test_df
