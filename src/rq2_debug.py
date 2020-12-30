@@ -293,13 +293,13 @@ if __name__ == '__main__':
     # print(res_df)
     #%%
     # fig 6 in 2014 paper
-    Wf_list = [0.25, 0.5,1]
+    Wf_list = [0.25, 0.5,1,2,4,8]
     # Wf_list = [0.25, 0.5]
     We_list = [0.5]
     Wt_list = [1]
-    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v3'
+    output_dir = Path(r'expriment_results') / 'paper2014_fig6_v4'
     #%%
-    res_df = run_parametric_study(df=df.head(10000),
+    res_df = run_parametric_study(df=df.head(20000),
                                   We_list=We_list,
                                   Wf_list=Wf_list,
                                   Wt_list=Wt_list,
@@ -318,15 +318,15 @@ if __name__ == '__main__':
     # plot
     import matplotlib.pyplot as plt
     fig = plt.figure()
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_tests_baseline'].values, color='r', linestyle='-',marker='*',label='Test suites -- Baseline model')
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='*',label='Test suites --Use patterns')
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_baseline'].values, color='r', linestyle='-',marker='*',label='Test suites -- Baseline model')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_tests_use_patterns'].values,color='g',linestyle='-',marker='*',label='Test suites --Use patterns')
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_baseline'].values, color='r', linestyle='-.',
              label='Failed cases -- Baseline model')
-    plt.plot(sub_df1['We'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='g', linestyle='-.',
+    plt.plot(sub_df1['Wf'].values, sub_df1['percentage_fail_cases_use_patterns'].values, color='g', linestyle='-.',
              label='Failed cases -- Use patterns')
     plt.legend()
     plt.grid()
-    plt.xlabel('W_e (Hour)')
+    plt.xlabel('W_f (Hour)')
     plt.ylabel('Percentage compared to original test suites')
     plt.tight_layout()
     plt.show()
