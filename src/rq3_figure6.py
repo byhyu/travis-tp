@@ -41,18 +41,23 @@ def prioritize_test(test_row:pd.Series,
         Boolean. Test case selected or not.
     """
     
+    test_id = test_row['test_id']
     test_name = test_row['test_suite']
     test_timestamp = test_row['test_suite_start_time']
     job_env = test_row['job_env']
     job_rvm = test_row['job_rvm']
     build_status = test_row.build_status
     exec_time = test_row.test_suite_duration
+    cum_start_time_before = test_row.cum_start_time_before
+    
     test_df = pd.DataFrame(index=[test_timestamp],
-                           data={'test_suite': [test_name], 
+                           data={'test_id': [test_id],
+                                 'test_suite': [test_name], 
                                  'job_env': [job_env],
                                  'job_rvm': [job_rvm],
                                  'build_status': [build_status],
                                  'exec_time': exec_time,
+                                 'cum_start_time_before':[cum_start_time_before],
                                  'priority': [0]
                                 })
     
@@ -86,13 +91,8 @@ def prioritize_test(test_row:pd.Series,
     if not test_run_history.empty: 
         test_run_history = test_run_history.sort_index()
         
-        #is_faulty = any(test_run_history[fail_start:test_timestamp].build_status=='failed')
         is_faulty = (len(test_run_history[fail_start:test_timestamp].build_status == 'failed') >= 1)
-        #is_idle = (test_run_history[exec_start:test_timestamp].shape[0] == 0)
         is_idle = (test_run_history[exec_start:test_timestamp].shape[0] == 0)
-        
-        #Wf_cond = len(test_run_history[fail_start:test_timestamp].build_status == 'failed') >= 1
-        #We_cond = test_run_history[exec_start:test_timestamp].shape[0] == 0
         
         if is_faulty or is_idle: 
             test_df['priority'] = 2
@@ -160,27 +160,32 @@ def split_dataset_into_wp(df:pd.DataFrame,
 if __name__ == '__main__':
     #%%
     df = pd.read_csv("../output/cleaned_dataset_rail_100000_new_noindex.csv", sep=';', header=0)
-    df['test_suite_start_time'] = pd.to_datetime(df['test_suite_start time']) #将数据类型转换为日期类型
+    df['test_suite_start_time'] = pd.to_datetime(df['test_suite_start_time']) #将数据类型转换为日期类型
+    df['test_id'] = df.index
+    df['cum_start_time_before'] = df['test_suite_duration'].cumsum() - df['test_suite_duration']
+    
+    
     df = df.set_index('test_suite_start_time', drop=False)
     df = df.sort_index()
     df = df.head(10000)
     #%%
     all_tests_history = split_dataset_into_wp(df, We=12, Wf=24, Wp=2)
-    
+    all_tests_history['cum_start_time_after'] = all_tests_history['exec_time'].cumsum() - all_tests_history['exec_time']
+    all_tests_history[['test_id']] = all_tests_history[['test_id']].astype('int')
     print(all_tests_history.shape)
     
-    print("priority 1: ", all_tests_history.loc[all_tests_history['priority'] == 1])
+    #print("priority 1: ", all_tests_history.loc[all_tests_history['priority'] == 1])
     
     #%%
-    from metrics import calc_APFD
-    # APFD before prioritization
-    df1 = df.reset_index(drop=True) # calc_APFD 要求 int index， 不是 datetime index
-    failed_tests_before = df1.index[df1['build_status'] == 'failed'].tolist()
-    APFD_before = calc_APFD(list(range(df1.shape[0])), failed_tests_before)
-
-    new_df = all_tests_history.reset_index() # change datetime index into integer index
-    failed_tests = new_df.index[new_df['build_status'] == 'failed'].tolist()
-    print(failed_tests)
-    APFD_after = calc_APFD(list(range(new_df.shape[0])), failed_tests)
-    print(f'APFD before: {APFD_before}')
-    print(f'APFD after:{APFD_after}')
+    #from metrics import calc_APFD
+    ## APFD before prioritization
+    #df1 = df.reset_index(drop=True) # calc_APFD 要求 int index， 不是 datetime index
+    #failed_tests_before = df1.index[df1['build_status'] == 'failed'].tolist()
+    #APFD_before = calc_APFD(list(range(df1.shape[0])), failed_tests_before)
+#
+    #new_df = all_tests_history.reset_index() # change datetime index into integer index
+    #failed_tests = new_df.index[new_df['build_status'] == 'failed'].tolist()
+    #print(failed_tests)
+    #APFD_after = calc_APFD(list(range(new_df.shape[0])), failed_tests)
+    #print(f'APFD before: {APFD_before}')
+    #print(f'APFD after:{APFD_after}')
