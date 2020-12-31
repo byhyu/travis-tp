@@ -33,7 +33,7 @@ If I understand correctly, we are shifting our focus from energy consumption to 
 ## Research Questions
 So, the goal of the project could be to address the following RQs:
 1. How common are the above cases of test execution redundancy?
-2. Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?
+2. Can existing test selection approaches be made <Ruby,GEM>—aware in an efficient way?  
 3. Can existing test prioritization approaches be made <Ruby,GEM>—aware in an efficient way?
 
 ## Datasets
@@ -86,7 +86,7 @@ TODO
 
 [1] S. Elbaum, G. Rothermel, and J. Penix, “Techniques for improvingregression testing in continuous integration development envi-ronments,” in Proceedings of the 22nd ACM SIGSOFT InternationalSymposium on Foundations of Software Engineering, 2014, pp. 235–245.
 [2] Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel. 2018. Redefining prioritization: Continuous prioritization for continuous integration. In International
-Conference on Software Engineering (ICSE). IEEE.
+Conference on Software Engineering (ICSE). IEEE.   
 [3] Jingjing Liang, Sebastian Elbaum, and Gregg Rothermel, "The Rails Dataset of Testing Results from Travis CI", https://github.com/elbaum/CI-Datasets, 2018.
 
 =======
